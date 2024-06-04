@@ -3,21 +3,19 @@ package main
 import (
 	"net/http"
 
-	"github.com/roman-mazur/architecture-lab-3/painter"
-	"github.com/roman-mazur/architecture-lab-3/painter/lang"
-	"github.com/roman-mazur/architecture-lab-3/ui"
+	"github.com/bifynok/KPI3-Lab3/painter"
+	"github.com/bifynok/KPI3-Lab3/painter/lang"
+	"github.com/bifynok/KPI3-Lab3/ui"
 )
 
 func main() {
 	var (
-		pv ui.Visualizer // Візуалізатор створює вікно та малює у ньому.
+		pv ui.Visualizer
 
-		// Потрібні для частини 2.
-		opLoop painter.Loop // Цикл обробки команд.
-		parser lang.Parser  // Парсер команд.
+		opLoop painter.Loop
+		parser lang.Parser
 	)
 
-	//pv.Debug = true
 	pv.Title = "Simple painter"
 
 	pv.OnScreenReady = opLoop.Start
